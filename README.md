@@ -1,4 +1,6 @@
 Task Management System
+
+
 This is a simple Task Management Board built as part of a coding challenge . Users can add tasks and track their progress using dynamic columns such as To Do, In Progress, and Done
 
            Technologies Used
@@ -11,7 +13,7 @@ Installation
 To run the project locally:
 
 bash
-git clone https://github.com/Veenasri22/taskboard-app.git
+
 cd taskboard-app
 npm install
 npm run dev
