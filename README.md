@@ -11,7 +11,7 @@ Installation
 To run the project locally:
 
 bash
-git clone https://github.com/YOUR_USERNAME/taskboard-app.git
+git clone https://github.com/Veenasri22/taskboard-app.git
 cd taskboard-app
 npm install
 npm run dev
