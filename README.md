@@ -15,21 +15,41 @@ To run the project locally:
 bash
 
 cd taskboard-app
+
+
 npm install
+
+
 npm run dev
+
 Open your browser and go to: http://localhost:3000
 
 Project Structure
 
 taskboard-app/
+
 ├── components/
+
 │   ├── Column.js
+
 │   └── TaskCard.js
+
+    |__Board.js
+
 ├── pages/
+
 │   └── index.js
+     |__App.js
+     |__App.test.js
+
 ├── styles/
-│   └── globals.css
+
+│   └── App.css
+    |__index.css
+
 ├── public/
+
 ├── README.md
+
 └── package.json
 
