@@ -1,30 +1,36 @@
-// components/Column.js
-import React, { useState } from "react";
-import TaskCard from "./TaskCard";
+import React, { useState } from 'react';
+import TaskCard from './TaskCard';
 
-function Column({ column, addTask }) {
-  const [taskText, setTaskText] = useState("");
+export default function Column({ name, tasks, addTask, moveTask, deleteTask, allColumns }) {
+  const [newTask, setNewTask] = useState('');
 
   const handleAdd = () => {
-    if (taskText.trim() === "") return;
-    addTask(column.id, taskText);
-    setTaskText("");
+    if (newTask.trim()) {
+      addTask(name, newTask.trim());
+      setNewTask('');
+    }
   };
 
   return (
-    <div className="column">
-      <h2>{column.name}</h2>
-      {column.tasks.map(task => (
-        <TaskCard key={task.id} task={task} />
-      ))}
+    <div style={{ padding: '1rem', border: '1px solid gray', width: '250px' }}>
+      <h3>{name}</h3>
       <input
-        value={taskText}
-        onChange={e => setTaskText(e.target.value)}
-        placeholder="New task..."
+        type="text"
+        value={newTask}
+        onChange={e => setNewTask(e.target.value)}
+        placeholder="New task"
       />
       <button onClick={handleAdd}>Add</button>
+      {tasks.map((task, index) => (
+        <TaskCard
+          key={index}
+          task={task}
+          onDelete={() => deleteTask(name, index)}
+          onMove={(toCol) => moveTask(name, toCol, index)}
+          allColumns={allColumns}
+          currentColumn={name}
+        />
+      ))}
     </div>
   );
 }
-
-export default Column;
